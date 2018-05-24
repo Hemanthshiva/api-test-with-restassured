@@ -14,5 +14,5 @@ Feature: Create and Delete bookings using the booking api
 #    Delete endpoint takes booking id as a parameter to delete the booking
 #    Token received from /auth endpoint should be passed to delete endpoint
     When i make an api call to delete the booking data
-    Then print booking id is that is being deleted
+    Then print booking id that is deleted
     And the status code should be 201
