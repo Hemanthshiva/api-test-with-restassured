@@ -1,11 +1,4 @@
-Feature: Get, Create and Delete bookings using the booking api
-
-
-#  Scenario: User calls a getBooking web services to retrieve list of bookings
-#    Given api is endPoint is "https://restful-booker.herokuapp.com/booking"
-#    When i make a api call to get the booking data
-#    Then the status code should be 200
-
+Feature: Create and Delete bookings using the booking api
 
   Scenario: User calls a postBooking web services to create a booking
     Given api is endPoint is "https://restful-booker.herokuapp.com/booking"
