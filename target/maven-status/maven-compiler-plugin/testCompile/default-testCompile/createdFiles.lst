@@ -1,6 +1,0 @@
-stepdefinitions\BookingIdContext.class
-com\demo\test\dto\Credentials.class
-com\demo\test\dto\Token.class
-com\demo\test\util\DateUtil.class
-runner\TestRunner.class
-stepdefinitions\BookingApiStepDefinitions.class
