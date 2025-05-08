@@ -1,4 +1,4 @@
-package com.tenx.test.util;
+package com.demo.test.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

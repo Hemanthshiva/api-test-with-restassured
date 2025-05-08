@@ -1,4 +1,4 @@
-package com.tenx.test.dto;
+package com.demo.test.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

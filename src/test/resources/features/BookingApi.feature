@@ -1,18 +1,22 @@
-Feature: Create and Delete bookings using the booking api
+Feature: Booking API Management
+  As a user of the Booking API
+  I want to be able to create and delete bookings
+  So that I can manage reservations programmatically
 
- Scenario: User calls a postBooking web services to create a booking
-    Given api endPoint is "https://restful-booker.herokuapp.com/booking"
-    When i make an api call to post the booking data
-    Then the status code should be 200
-#    Store the booking id into a variable and use it in the next scenario
+  Background:
+    Given the booking API base URL is "https://restful-booker.herokuapp.com"
 
+  @order1 @create
+  Scenario: Create a new booking
+    When I send a POST request to "/booking" with booking details
+    Then the response status code should be 200
+    And the response should contain a booking ID
+    And I store the booking ID for later use
 
-  Scenario: User calls a deleteBooking web services to delete a booking
-    Given api endPoint is "https://restful-booker.herokuapp.com/auth"
-    And i make an api call to get the token
-    And api endPoint is "https://restful-booker.herokuapp.com/booking"
-#    Delete endpoint takes booking id as a parameter to delete the booking
-#    Token received from /auth endpoint should be passed to delete endpoint
-    When i make an api call to delete the booking data
-    Then print booking id that is deleted
-    And the status code should be 201
+  @order2 @delete
+  Scenario: Delete an existing booking
+    Given I have a stored booking ID
+    When I send a POST request to "/auth" to get an authentication token
+    And I send a DELETE request to "/booking/{id}" with the authentication token
+    Then the response status code should be 201
+    And I log the deleted booking ID
